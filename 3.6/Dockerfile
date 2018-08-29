@@ -4,6 +4,7 @@ LABEL maintainer "Bitnami <containers@bitnami.com>"
 # Install required system packages and dependencies
 RUN install_packages libc6 libgcc1 libpcap0.8 libsasl2-2 libssl1.0.0
 RUN bitnami-pkg unpack mongodb-3.6.6-1 --checksum 0e000308b830772feeb07ad13eef0394aaa8043d3adf5de0c7444d4f9ea8781d
+RUN mkdir /docker-entrypoint-initdb.d
 
 COPY rootfs /
 ENV BITNAMI_APP_NAME="mongodb" \
